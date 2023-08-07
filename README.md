@@ -1,6 +1,6 @@
 # Dubbo-Scan
 
-一款Apache Dubbo漏洞检测工具。包含了信息收集、参数爆破等功能，从而对Dubbo的Provider和Consumer进行漏洞利用检测。
+一款Apache Dubbo漏洞检测工具。包含了信息收集、参数爆破等功能，利用获取到的信息对Dubbo的Provider和Consumer进行漏洞利用检测。
 
 ## 免责申明
 
