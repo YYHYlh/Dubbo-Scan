@@ -1,0 +1,21 @@
+timeout: 5
+usuallyPorts:
+  - 2181
+  - 22222
+  - 20880
+methodParametersGuess: true
+methodParametersGuessMaxLength: 3
+methodParametersGuessList:
+  - java.lang.Object
+  - java.lang.Integer
+  - java.util.Map
+  - java.lang.String
+reverse: #攻击consumer的回连shell地址
+  shellIp: 127.0.0.1
+  shellPort: 9999
+  fileIp: 127.0.0.1
+  filePort: 8888
+#zookeeper:
+#  username: admin
+#  password: admin
+#  scheme: auth
