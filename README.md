@@ -72,36 +72,36 @@ Dubbo在反序列化前需要对用户传入的服务和参数类型进行校验
 
 ## 使用方法
 
-1. 自行编译或者使用relase版本
-2. 将resources目录下的target.txt、reverse.jar和config.yaml放到jar包的同目录下，并对target.txt和config.yaml进行配置。
-3. 配置完成后执行jar -jar dubbo-scanner.jar 即可。
+1. 下载Releases版本代码，解压缩。
+2. 完成target.txt和config.yaml的配置。
+3. 执行jar -jar dubbo-scanner.jar。
 
 
-本项目不提供命令行参数，所有的配置通过修改同目录下的config.yaml和target.txt进行配置
-target.txt为需要检测的目标地址，每一行为一个IP:PORT，如果不提供Port，则会检测config.yaml中的usuallyPorts。
-
-config.yaml如下
-```yaml
-timeout: 5 # 网络连接过程的超时时间
-usuallyPorts: # 默认检测端口
-  - 2181
-  - 22222
-  - 20880
-methodParametersGuess: true # 是否开启参数爆破
-methodParametersGuessMaxLength: 3 # 参数列表最大长度
-methodParametersGuessList: # 猜测类型
-  - java.lang.Object
-  - java.lang.Integer
-  - java.util.Map
-  - java.lang.String
-reverse: # 攻击Consumer的回连模块，注释掉该模块，就不会调用对Consumer的漏洞检测
-  shellIp: 127.0.0.1 # 回连shell地址，可以为任意的IP地址
-  shellPort: 9999 # 回连端口
-  fileIp: 127.0.0.1 # 回连文件服务IP，必须为本项目的IP
-  filePort: 8888 # 回连文件服务端口
-#zookeeper: # zookeepr认证
-#  username: admin
-#  password: admin
-#  scheme: auth
-```
+  本项目不提供命令行参数，所有的配置通过修改同目录下的config.yaml和target.txt进行配置
+  target.txt为需要检测的目标地址，每一行为一个IP:PORT，如果不提供Port，则会检测config.yaml中的usuallyPorts。
+  
+  config.yaml如下
+  ```yaml
+  timeout: 5 # 网络连接过程的超时时间
+  usuallyPorts: # 默认检测端口
+    - 2181
+    - 22222
+    - 20880
+  methodParametersGuess: true # 是否开启参数爆破
+  methodParametersGuessMaxLength: 3 # 参数列表最大长度
+  methodParametersGuessList: # 猜测类型
+    - java.lang.Object
+    - java.lang.Integer
+    - java.util.Map
+    - java.lang.String
+  reverse: # 攻击Consumer的回连模块，注释掉该模块，就不会调用对Consumer的漏洞检测
+    shellIp: 127.0.0.1 # 回连shell地址，可以为任意的IP地址
+    shellPort: 9999 # 回连端口
+    fileIp: 127.0.0.1 # 回连文件服务IP，必须为本项目的IP
+    filePort: 8888 # 回连文件服务端口
+  #zookeeper: # zookeepr认证
+  #  username: admin
+  #  password: admin
+  #  scheme: auth
+  ```
 
