@@ -1,4 +1,4 @@
-# 测试实例
+# 测试示例
 
 ### 3.x dubbo provider
 
