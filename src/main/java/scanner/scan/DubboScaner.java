@@ -60,7 +60,7 @@ public class DubboScaner extends AbstractScanner {
             for (String serviceName : dubboInfo.keySet()) {
                 DubboInfo.Service service = dubboInfo.get(serviceName);
                 url = urlBase + serviceName;
-                if (service.getMethods().size() != 0) {
+                if (service.getMethods().size() != 0 && Configuration.methodGuess) {
                     //已存在方法，尝试利用
                     for (Object args : service.getMethods()) {
                         if (burstService(serviceName, (JSONObject) args)) {

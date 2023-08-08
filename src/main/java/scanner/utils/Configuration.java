@@ -13,6 +13,7 @@ public class Configuration {
     private static Map properties;
     public static int timeout;
     public static ArrayList<Integer> usuallyPorts;
+    public static boolean methodGuess;
     public static int methodParametersGuessMaxLength;
     public static ArrayList<String> methodParametersGuessList;
     public static String zookeeperName;
@@ -39,8 +40,11 @@ public class Configuration {
             properties = yaml.loadAs(new FileInputStream(filePath + "config.yaml"), Map.class);
             timeout = (int) properties.get("timeout") * 1000;
             usuallyPorts = (ArrayList<Integer>) properties.get("usuallyPorts");
-            methodParametersGuessList = (ArrayList<String>) properties.get("methodParametersGuessList");
-            methodParametersGuessMaxLength = (int) properties.get("methodParametersGuessMaxLength");
+            methodGuess = (boolean) properties.get("methodParametersGuess");
+            if (methodGuess) {
+                methodParametersGuessList = (ArrayList<String>) properties.get("methodParametersGuessList");
+                methodParametersGuessMaxLength = (int) properties.get("methodParametersGuessMaxLength");
+            }
             if (properties.get("zookeeper") != null) {
                 Map<String, String> m = (Map) properties.get("zookeeper");
                 zookeeperName = m.get("username");
