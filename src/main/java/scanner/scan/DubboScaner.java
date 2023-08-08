@@ -42,7 +42,7 @@ public class DubboScaner extends AbstractScanner {
             return false;
         }
         // 如果目标是dubbo3.x，并且存在元数据service，则不需要再去检测其他service
-        if (dubboInfo.getVersion().startsWith("3") && dubboInfo.containsKey(dubboInfo.getApplicationName() + "/org.apache.dubbo.metadata.MetadataService")) {
+        if (dubboInfo.containsKey(dubboInfo.getApplicationName() + "/org.apache.dubbo.metadata.MetadataService")) {
             logger.debug("尝试查找MetadataService");
             url = urlBase + dubboInfo.getApplicationName() + "/org.apache.dubbo.metadata.MetadataService";
             interFace = "org.apache.dubbo.metadata.MetadataService";
