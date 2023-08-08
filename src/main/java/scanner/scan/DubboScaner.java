@@ -26,7 +26,7 @@ public class DubboScaner extends AbstractScanner {
     public String method;
     public String version;
     public String[] parameters;
-    private DubboInfo dubboInfo = new DubboInfo();
+    public DubboInfo dubboInfo = new DubboInfo();
 
     public DubboScaner(String targetIp, Integer targetPort) {
         exploiter = new DubboExploiter();
@@ -74,7 +74,7 @@ public class DubboScaner extends AbstractScanner {
 
             }
         }
-        return false;
+        return true;
     }
 
     private static Map<String, String> getInstance() throws IOException {
