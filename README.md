@@ -74,7 +74,10 @@ Dubbo在反序列化前需要对用户传入的服务和参数类型进行校验
 
 1. 下载Releases版本代码，解压缩。
 2. 完成target.txt和config.yaml的配置。
-3. 执行jar -jar dubbo-scanner.jar。
+3. 执行命令：
+   ```
+   jar -jar dubbo-scanner.jar
+   ```
 
 
   本项目不提供命令行参数，所有的配置通过修改同目录下的config.yaml和target.txt进行配置
