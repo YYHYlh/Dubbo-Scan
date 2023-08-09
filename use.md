@@ -16,7 +16,7 @@
 【DubboInfo】
 IP: 192.168.2.105
 Group Name:demo-provider
-version:2.x
+version:3.x
 services:
         interface:org.apache.dubbo.samples.api.GreetingsService
         port:20880
